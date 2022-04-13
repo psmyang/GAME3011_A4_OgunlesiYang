@@ -144,7 +144,7 @@ public class UIManager : Singleton<UIManager>
 
     void OnAllAnswerSequenceCompletedCallback()
     {
-        GameOver("All sequence completed");
+        GameOver("Game Over!");
     }
 
     void OnGameOverCallback()
