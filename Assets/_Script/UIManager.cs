@@ -33,6 +33,7 @@ public class UIManager : Singleton<UIManager>
         GlobalData.instance.OnScoreChanged.AddListener(OnScoreChangedCallback);
         GridManager.instance.OnTileClicked.AddListener(OnTileClickedCallback);
         GridManager.instance.OnAllAnswerSequenceCompleted.AddListener(OnAllAnswerSequenceCompletedCallback);
+        GridManager.instance.OnGameOver.AddListener(OnGameOverCallback);
     }
 
     // Start is called before the first frame update
@@ -144,6 +145,11 @@ public class UIManager : Singleton<UIManager>
     void OnAllAnswerSequenceCompletedCallback()
     {
         GameOver("All sequence completed");
+    }
+
+    void OnGameOverCallback()
+    {
+        GameOver("Game Over!");
     }
 
     void OnScoreChangedCallback(int score)

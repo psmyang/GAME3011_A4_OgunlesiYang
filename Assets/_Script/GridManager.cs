@@ -75,6 +75,8 @@ public class GridManager : Singleton<GridManager>
     public UnityEvent OnTileClicked; //UIManager's timer will subscribte this to start timber
     [HideInInspector]
     public UnityEvent OnAllAnswerSequenceCompleted;// UIManager will subscribe this
+    [HideInInspector]
+    public UnityEvent OnGameOver;
 
     protected override void Awake()
     {
@@ -431,12 +433,13 @@ public class GridManager : Singleton<GridManager>
     {
         ++numOfCompletedAnswerSequence;
 
-        if(numOfCompletedAnswerSequence == answerSequenceCount)
+        if (numOfCompletedAnswerSequence == answerSequenceCount)
         {
-            if(OnAllAnswerSequenceCompleted != null)
+            if (OnAllAnswerSequenceCompleted != null)
             {
                 OnAllAnswerSequenceCompleted.Invoke();
             }
-        }
+            
+        }  
     }
 }
